@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=a\ b
+comment1.target=boolean\ cancel(int,\ int)
+comment2.params=a\ b
+comment2.target=int\ reduce(int,\ int)
+comment3.params=b
+comment3.target=java.util.ArrayList\ getDivs(int)
+comment4.params=a
+comment4.target=int\ getLowest(int)
+numComments=5

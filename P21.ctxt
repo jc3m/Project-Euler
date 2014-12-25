@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=i
+comment1.target=boolean\ isAmicable(int)
+comment2.params=i
+comment2.target=int\ function(int)
+comment3.params=i
+comment3.target=java.util.ArrayList\ divisors(int)
+numComments=4
