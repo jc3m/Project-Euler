@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
-public class P69 {
+public class P69Test {
 	public static void main(String[] args) {
-		P69 runner = new P69();
+		P69Test runner = new P69Test();
 		runner.run();
 	}
 
@@ -12,6 +12,7 @@ public class P69 {
 		for (int i = 2; ; i++) {
 			System.out.println(i * 30030);
 			if (30030 * i > 1000000) {
+				System.out.println(bestNum);
 				break;
 			}
 			if (max < (double)(i*30030)/(double)totient(i*30030)) {

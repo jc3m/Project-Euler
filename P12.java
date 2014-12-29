@@ -1,17 +1,10 @@
-package OneHundred;
-/**
- * Write a description of class P12 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class P12
 {
     public static void main(String[] args){
         int counter = 1;
         int triangle = 1;
         while(true){
-            System.out.println(Integer.toString(triangle) + ": " + numFactors(triangle));
+            //System.out.println(Integer.toString(triangle) + ": " + numFactors(triangle));
             if(numFactors(triangle) > 500){
                 System.out.println(Integer.toString(triangle));
                 System.exit(0);

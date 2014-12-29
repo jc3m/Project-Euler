@@ -1,4 +1,3 @@
-package OneHundred;
 import java.util.*;
 
 public class P18

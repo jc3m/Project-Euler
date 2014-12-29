@@ -4,7 +4,7 @@ public class P3
         long startTime = System.currentTimeMillis();
         int largest = 0;
         long value =  600851475143L;
-        while(true){
+        while(true) {
             if (value == findPrime(value)) {
                 System.out.println(value);
                 break;
