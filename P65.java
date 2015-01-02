@@ -8,29 +8,34 @@ public class P65 {
 	}
 
 	public void run() {
-		int counter = 0;
-		for (int j = 1; j <= 1000; j++) {
-			if (greaterNum(j))
-				counter++;
+		Fraction frac = findFraction(99);
+		System.out.println(sum(frac.frac[0]));
+	}
+
+	public int sum(BigInteger i) {
+		String str = i.toString();
+		int total = 0;
+		for (int j = 0; j < str.length(); j++) {
+			total += Integer.parseInt(str.substring(j, j+1));
 		}
-		System.out.println(counter);
+		return total;
 	}
 
-	private boolean greaterNum(int iter) {
-		Fraction test = findFraction(iter);
-		return test.frac[0].toString().length() > test.frac[1].toString().length();
-	}
-
-	public Fraction findFraction(int iter) {
+	public Fraction findFraction(int goal) {
 		Fraction two = new Fraction(new BigInteger("2"), BigInteger.ONE);
-		return two.add(recurseFrac(iter));
+		return two.add(recurseFrac(0, goal));
 	}
 
-	private Fraction recurseFrac(int iter) {
-		if (iter == 1)
-			return new Fraction(BigInteger.ONE, new BigInteger("2"));
-		Fraction two = new Fraction(new BigInteger("2"), BigInteger.ONE);
-		return two.add(recurseFrac(iter-1)).inverse();
+	private Fraction recurseFrac(int iter, int goal) {
+		if (iter == goal)
+			return new Fraction(BigInteger.ZERO, BigInteger.ONE);
+		if (iter % 3 == 1) {
+			int base = (iter + 2) / 3 * 2;
+			Fraction num = new Fraction(new BigInteger(Integer.toString(base)), BigInteger.ONE);
+			return num.add(recurseFrac(iter+1, goal)).inverse();
+		}
+		Fraction one = new Fraction(BigInteger.ONE, BigInteger.ONE);
+		return one.add(recurseFrac(iter+1, goal)).inverse();
 	}
 
 	private class Fraction {
@@ -58,7 +63,7 @@ public class P65 {
 		}
 
 		public String toString() {
-			return frac[0].toString() + ", " + frac[1].toString();
+			return frac[0].toString() + "/" + frac[1].toString();
 		}
 	}
 }
