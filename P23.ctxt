@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=list
+comment1.target=boolean\ isAbundant(java.util.ArrayList)
+comment2.params=i
+comment2.target=java.util.ArrayList\ divisors(int)
+numComments=3
