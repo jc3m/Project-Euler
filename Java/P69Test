@@ -1,0 +1,78 @@
+import java.util.Arrays;
+
+public class P69Test {
+	public static void main(String[] args) {
+		P69Test runner = new P69Test();
+		runner.run();
+	}
+
+	public void run() {
+		double max = 0;
+		double bestNum = -1;
+		for (int i = 1; i < 100; i++) {
+			System.out.println(i + ": " + totient(i));
+			if (max < (double)i/(double)totient(i) {
+				max = (double)i/(double)totient(i);
+				bestNum = composites[i];
+			}
+			if (i % 10000 == 0)
+				System.out.println(i);
+		}
+		System.out.println(bestNum);
+	}
+
+	private int[] generateComposites(int n) {
+		boolean[] sieve = new boolean[n+1];
+		for (int i = 2; i < sieve.length; i++) {
+			sieve[i] = true;
+		}
+		int current = 2;
+		while (current < sieve.length) {
+			if (sieve[current]) {
+				for (int i = current*2; i < sieve.length; i += current) {
+					sieve[i] = false;
+				}
+			}
+			current++;
+		}
+		for (int i = 0; i < sieve.length; i++) {
+			sieve[i] = !sieve[i];
+		}
+		sieve[0] = false;
+		sieve[1] = false;
+		int size = 0;
+		for (int i = 0; i < sieve.length; i++) {
+			if (sieve[i])
+				size++;
+		}
+		int[] res = new int[size];
+		int index = 0;
+		for (int i = 0; i < sieve.length; i++) {
+			if (sieve[i]) {
+				res[index] = i;
+				index++;
+			}
+		}
+		return res;
+	}
+
+	public int totient(int num) {
+		int counter = 0;
+		for (int i = 1; i < num; i++) {
+			if (gcd(num, i) == 1)
+				counter++;
+		}
+		return counter;
+	}
+
+	private int gcd(int A, int B) {
+		int a = A;
+		int b = B;
+		while (b != 0) {
+			int temp = b;
+			b = a % b;
+			a = temp;
+		}
+		return a;
+	}
+}
