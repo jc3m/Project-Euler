@@ -6,7 +6,6 @@ def main():
                 largest = i * j
     print largest
 
-
 def isPalindrome(num):
     s = str(num)
     return s == s[::-1]
