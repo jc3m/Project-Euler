@@ -26,7 +26,7 @@ def count(nums, lim):
 
 def main():
     nums = sieve(10**7)
-    print count(nums, 30)
+    print len(nums)
     #print len(sieve(10**7))
 
 if __name__ == '__main__':
