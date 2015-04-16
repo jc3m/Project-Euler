@@ -27,7 +27,7 @@ public class P61 {
 	}
 
 	public ArrayList<Integer> fourDigitTriangle() {
-		ArrayList<Integer> triangles = new ArrayList<Integer>(); 
+		ArrayList<Integer> triangles = new ArrayList<Integer>();
 		for (int i = 1; ; i++) {
 			if (generateTriangle(i) > 9999) {
 				break;
